@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team5631.robot;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,6 +24,7 @@ public class Robot extends IterativeRobot {
 	public static final Elevator elevator = new Elevator();
 	public static OI oi;
 	public static DriveTrain driveTrain;
+	public static DigitalInput proxSensor;
 
     Command autonomousCommand;
 
@@ -34,6 +36,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         // instantiate the command used for the autonomous period
         autonomousCommand = new RaiseElevator();
+        proxSensor = new DigitalInput(9);
         
     }
 	
@@ -75,7 +78,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         driveTrain.drive();
-        
+        System.out.println(proxSensor.get()?"YES":"NO");
     }
     
     /**

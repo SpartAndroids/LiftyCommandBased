@@ -2,6 +2,7 @@ package org.usfirst.frc.team5631.robot.subsystems;
 
 import org.usfirst.frc.team5631.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -13,7 +14,6 @@ public class Elevator extends Subsystem {
     // here. Call these from Commands.
 	
 	Talon motor = RobotMap.elevatorMotor;
-
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
@@ -37,6 +37,9 @@ public class Elevator extends Subsystem {
 	 */
 	public void stop() {
 		motor.set(0);
+	}
+	public boolean getProxSensor(){
+		return false;
 	}
 }
 
