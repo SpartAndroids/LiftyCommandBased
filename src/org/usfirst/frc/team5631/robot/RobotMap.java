@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5631.robot;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
@@ -24,6 +25,7 @@ public class RobotMap {
 	public static Talon leftMotor1, leftMotor2, rightMotor1, rightMotor2;
 	public static Talon elevatorMotor;
 	public static RobotDrive robotDrive;
+	public static DigitalInput proximitySensor;
 
 	public void init() {
 		leftMotor1 = new Talon(0);
@@ -32,5 +34,6 @@ public class RobotMap {
 		rightMotor2 = new Talon(3);
 		elevatorMotor = new Talon(4);
 		robotDrive = new RobotDrive(leftMotor1, leftMotor2, rightMotor1, rightMotor2);
+		proximitySensor = new DigitalInput(0);
 	}
 }

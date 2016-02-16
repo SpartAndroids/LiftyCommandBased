@@ -38,11 +38,13 @@ public class OI {
 	public static Joystick driveStick;
 	public JoystickButton btnRaiseElevator;
 	public JoystickButton btnLowerElevator;
+	public JoystickButton btnHaultMovement;
 
 	public OI() {
 		driveStick = new Joystick(0);
 		btnLowerElevator = new JoystickButton(driveStick, 7);
 		btnRaiseElevator = new JoystickButton(driveStick, 8);
+		btnHaultMovement = new JoystickButton(driveStick, 1);
 	}
 
 	public Joystick getDriveStick() {
